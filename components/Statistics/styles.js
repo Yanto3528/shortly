@@ -41,7 +41,13 @@ export const StatisticsColumn = styled.div`
   border-radius: 5px;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
   text-align: left;
+  cursor: pointer;
   position: relative;
+  transition: all 0.4s;
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+  }
   h3 {
     margin-top: 30px;
     margin-bottom: 20px;

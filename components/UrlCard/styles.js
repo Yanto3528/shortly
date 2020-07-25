@@ -18,14 +18,22 @@ export const UrlActionContainer = styled.div`
     font-size: 1.4rem;
     padding: 10px 25px;
   }
+  label {
+    position: relative;
+  }
 `;
 
 export const OriginalLink = styled.p`
   font-weight: 700;
 `;
 
-export const ConvertedLink = styled.p`
+export const ConvertedLink = styled.input`
   color: ${({ theme }) => theme.primary};
   font-weight: 700;
+  font-size: 1.8rem;
+  text-align: right;
   margin-right: 20px;
+  outline: none;
+  border: none;
+  cursor: pointer;
 `;

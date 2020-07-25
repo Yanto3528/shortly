@@ -6,7 +6,7 @@ export default styled.input`
   background-color: white;
   width: 100%;
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 5px;
   font-size: 1.6rem;
   ${({ error }) =>
     error &&

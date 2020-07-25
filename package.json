@@ -9,12 +9,14 @@
   },
   "dependencies": {
     "axios": "^0.19.2",
+    "framer-motion": "^2.1.4",
     "next": "9.4.4",
     "react": "16.13.1",
     "react-copy-to-clipboard": "^5.0.2",
     "react-dom": "16.13.1",
     "react-hook-form": "^6.0.8",
-    "styled-components": "^5.1.1"
+    "styled-components": "^5.1.1",
+    "use-media": "^1.4.0"
   },
   "devDependencies": {
     "babel-plugin-styled-components": "^1.10.7"

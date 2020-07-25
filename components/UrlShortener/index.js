@@ -10,7 +10,7 @@ import Input from "../../styles/shared/Input";
 const UrlShortener = () => {
   const [urls, setUrls] = useState([]);
   const [urlError, setUrlError] = useState(null);
-  const { register, handleSubmit, errors } = useForm();
+  const { register, handleSubmit, errors, reset } = useForm();
 
   const onSubmit = async (data) => {
     try {
@@ -20,9 +20,10 @@ const UrlShortener = () => {
         data,
       });
       setUrls([...urls, res.data]);
+      reset();
     } catch (error) {
       console.log(error);
-      setUrlError(error.response.data);
+      setUrlError("Something went wrong. Please try again");
     }
   };
 
@@ -36,9 +37,10 @@ const UrlShortener = () => {
               placeholder="Shorten a link here..."
               name="url"
               ref={register({ required: true })}
+              error={errors.url}
             />
             {errors && errors.url && <p>Please add a link</p>}
-            {/* {urlError && <p>{urlError}</p>} */}
+            {urlError && <p>{urlError}</p>}
           </div>
           <Button>Shorten It!</Button>
         </form>
