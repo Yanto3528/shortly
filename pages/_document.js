@@ -25,8 +25,9 @@ export default class MyDocument extends Document {
         <Head>
           {/* Step 5: Output the styles in the head  */}
           {this.props.styleTags}
+          <link rel="icon" href="/images/favicon-32x32.png" />
           <link
-            href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@500;700&display=swap"
             rel="stylesheet"
           />
         </Head>
