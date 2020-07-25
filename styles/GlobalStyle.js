@@ -15,6 +15,9 @@ export default createGlobalStyle`
     font-size: 1.8rem;
     color: ${({ theme }) => theme.darkgrey};
   }
+  h1, h2,h3,h4,h5,h6 {
+    font-family: "Poppins", sans-serif;
+  }
   a {
     text-decoration: none;
   }

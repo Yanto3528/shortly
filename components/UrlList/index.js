@@ -1,12 +1,12 @@
 import UrlCard from "../UrlCard";
 import UrlListContainer from "./styles";
 
-const UrlList = () => {
+const UrlList = ({ urls }) => {
   return (
     <UrlListContainer>
-      <UrlCard />
-      <UrlCard />
-      <UrlCard />
+      {urls.map((url) => (
+        <UrlCard key={url.hashid} url={url} />
+      ))}
     </UrlListContainer>
   );
 };

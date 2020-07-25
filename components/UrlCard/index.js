@@ -1,3 +1,4 @@
+import { useRef, useState } from "react";
 import {
   UrlCardContainer,
   OriginalLink,
@@ -6,13 +7,26 @@ import {
 } from "./styles";
 import Button from "../../styles/shared/Button";
 
-const UrlCard = () => {
+const UrlCard = ({ url }) => {
+  const [copied, setCopied] = useState(false);
+  const linkRef = useRef(null);
+
+  const onCopyUrl = (e) => {
+    linkRef.current.select();
+    document.execCommand("copy");
+    setCopied(true);
+  };
+
   return (
     <UrlCardContainer>
-      <OriginalLink>https://frontend.mentor.io</OriginalLink>
+      <OriginalLink>{url.url}</OriginalLink>
       <UrlActionContainer>
-        <ConvertedLink>https://rel.link/adf44</ConvertedLink>
-        <Button>Copy</Button>
+        <ConvertedLink
+          ref={linkRef}
+        >{`https://rel.link/${url.hashid}`}</ConvertedLink>
+        <Button onClick={onCopyUrl} secondary={copied}>
+          {copied ? "Copied" : "Copy"}
+        </Button>
       </UrlActionContainer>
     </UrlCardContainer>
   );

@@ -14,4 +14,9 @@ export default styled.button`
   &:hover {
     opacity: 0.8;
   }
+  ${({ secondary }) =>
+    secondary &&
+    css`
+      background-color: ${({ theme }) => theme.secondary};
+    `}
 `;
