@@ -14,6 +14,10 @@ export default styled.button`
   &:hover {
     opacity: 0.8;
   }
+  &:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+  }
   ${({ secondary }) =>
     secondary &&
     css`

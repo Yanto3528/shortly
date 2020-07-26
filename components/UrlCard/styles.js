@@ -55,7 +55,7 @@ export const ConvertedLink = styled.input`
   margin-right: 20px;
   outline: none;
   border: none;
-  cursor: pointer;
+  cursor: copy;
   @media only screen and (max-width: 800px) {
     margin-right: 0;
     margin-bottom: 10px;

@@ -63,7 +63,7 @@ const Footer = () => {
             </FooterLinks>
           </ul>
           <SocialIconContainer>
-            <a href="#">
+            <a href="#" id="facebook">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                 <path
                   fill="#FFF"
@@ -71,7 +71,7 @@ const Footer = () => {
                 />
               </svg>
             </a>
-            <a href="#">
+            <a href="#" id="twitter">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20">
                 <path
                   fill="#FFF"
@@ -79,7 +79,7 @@ const Footer = () => {
                 />
               </svg>
             </a>
-            <a href="#">
+            <a href="#" id="pinterest">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                 <path
                   fill="#FFF"
@@ -87,7 +87,7 @@ const Footer = () => {
                 />
               </svg>
             </a>
-            <a href="#">
+            <a href="#" id="instagram">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
                 <path
                   fill="#FFF"
