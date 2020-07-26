@@ -36,7 +36,7 @@ const UrlCard = ({ url }) => {
         <label>
           <ConvertedLink
             ref={linkRef}
-            value={`https://rel.link/${url.hashid}`}
+            value={`https://rel.ink/${url.hashid}`}
             readOnly
             onClick={onCopyUrl}
           />
