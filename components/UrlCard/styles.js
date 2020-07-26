@@ -9,6 +9,9 @@ export const UrlCardContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media only screen and (max-width: 800px) {
+    flex-direction: column;
+  }
 `;
 
 export const UrlActionContainer = styled.div`
@@ -21,19 +24,42 @@ export const UrlActionContainer = styled.div`
   label {
     position: relative;
   }
+  @media only screen and (max-width: 800px) {
+    flex-direction: column;
+    width: 100%;
+    label {
+      width: 100%;
+    }
+    button {
+      width: 100%;
+    }
+  }
 `;
 
 export const OriginalLink = styled.p`
   font-weight: 700;
+  word-wrap: break-word;
+  @media only screen and (max-width: 800px) {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid ${({ theme }) => theme.lightgrey};
+    width: 100%;
+  }
 `;
 
 export const ConvertedLink = styled.input`
   color: ${({ theme }) => theme.primary};
   font-weight: 700;
   font-size: 1.8rem;
-  text-align: right;
+  text-align: center;
   margin-right: 20px;
   outline: none;
   border: none;
   cursor: pointer;
+  @media only screen and (max-width: 800px) {
+    margin-right: 0;
+    margin-bottom: 10px;
+    text-align: left;
+    width: 100%;
+  }
 `;

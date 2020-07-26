@@ -19,6 +19,10 @@ export const StatisticsRow = styled.div`
   display: flex;
   align-items: center;
   position: relative;
+  @media only screen and (max-width: 800px) {
+    margin-top: 100px;
+    flex-direction: column;
+  }
 `;
 
 export const Line = styled.div`
@@ -29,6 +33,13 @@ export const Line = styled.div`
   top: 50%;
   left: 0;
   transform: translateY(-50%);
+  @media only screen and (max-width: 800px) {
+    width: 10px;
+    height: 100%;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+  }
 `;
 
 export const StatisticsColumn = styled.div`
@@ -45,8 +56,7 @@ export const StatisticsColumn = styled.div`
   position: relative;
   transition: all 0.4s;
   &:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
   }
   h3 {
     margin-top: 30px;
@@ -62,6 +72,13 @@ export const StatisticsColumn = styled.div`
   &:last-child {
     margin-top: 140px;
   }
+  @media only screen and (max-width: 1000px) {
+    padding: 30px;
+    text-align: center;
+    &:not(:last-child) {
+      margin-right: 0;
+    }
+  }
 `;
 
 export const IconContainer = styled.div`
@@ -76,4 +93,8 @@ export const IconContainer = styled.div`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  @media only screen and (max-width: 800px) {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 `;

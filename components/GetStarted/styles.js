@@ -13,4 +13,7 @@ export const GetStartedContainer = styled.div`
     margin-bottom: 20px;
     font-size: 3rem;
   }
+  @media only screen and (max-width: 500px) {
+    background-image: url(/images/bg-boost-mobile.svg);
+  }
 `;

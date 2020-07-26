@@ -33,4 +33,20 @@ export const FormContainer = styled.div`
       padding: 20px 30px;
     }
   }
+  @media only screen and (max-width: 700px) {
+    padding: 30px;
+    background-image: url("/images/bg-shorten-mobile.svg");
+    form {
+      flex-direction: column;
+      div {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 50px;
+      }
+      button {
+        width: 100%;
+        font-size: 1.8rem;
+      }
+    }
+  }
 `;

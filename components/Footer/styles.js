@@ -10,6 +10,17 @@ export const FooterContentContainer = styled.div`
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
+  @media only screen and (max-width: 800px) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    > svg {
+      margin-bottom: 50px;
+    }
+    ul {
+      margin: 20px 0;
+    }
+  }
 `;
 
 export const FooterLinks = styled.li`
