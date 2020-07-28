@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 export const StatisticsContainer = styled.div`
   margin-top: 100px;
@@ -15,7 +16,7 @@ export const StatisticsContainer = styled.div`
   }
 `;
 
-export const StatisticsRow = styled.div`
+export const StatisticsRow = styled(motion.div)`
   display: flex;
   align-items: center;
   position: relative;
@@ -25,7 +26,7 @@ export const StatisticsRow = styled.div`
   }
 `;
 
-export const Line = styled.div`
+export const Line = styled(motion.div)`
   width: 100%;
   height: 10px;
   background-color: ${({ theme }) => theme.primary};
@@ -42,7 +43,7 @@ export const Line = styled.div`
   }
 `;
 
-export const StatisticsColumn = styled.div`
+export const StatisticsColumn = styled(motion.div)`
   &:not(:last-child) {
     margin-right: 25px;
   }

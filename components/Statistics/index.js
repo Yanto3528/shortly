@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { useInView } from "react-intersection-observer";
+import { useAnimation } from "framer-motion";
 import {
   StatisticsContainer,
   StatisticsRow,
@@ -6,7 +9,45 @@ import {
   Line,
 } from "./styles";
 
+const rowVariant = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.5,
+    },
+  },
+};
+
+const lineVariant = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { delay: 2, duration: 1 } },
+};
+
+const columnVariant = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 0.4,
+    },
+  },
+};
+
 const Statistics = () => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
   return (
     <StatisticsContainer>
       <h2>Advanced Statistics</h2>
@@ -14,9 +55,14 @@ const Statistics = () => {
         Track how your links are performing across the web with <br />
         our advanced statistic dashboard
       </p>
-      <StatisticsRow>
-        <Line />
-        <StatisticsColumn>
+      <StatisticsRow
+        variants={rowVariant}
+        initial="hidden"
+        animate={controls}
+        ref={ref}
+      >
+        <Line variants={lineVariant} />
+        <StatisticsColumn variants={columnVariant}>
           <IconContainer>
             <img
               src="/images/icon-brand-recognition.svg"
@@ -29,7 +75,7 @@ const Statistics = () => {
             mean a thing. Branded links help instil confidende in your content.
           </p>
         </StatisticsColumn>
-        <StatisticsColumn>
+        <StatisticsColumn variants={columnVariant}>
           <IconContainer>
             <img
               src="/images/icon-detailed-records.svg"
@@ -42,7 +88,7 @@ const Statistics = () => {
             where people engage with your content helps inform better decisions.
           </p>
         </StatisticsColumn>
-        <StatisticsColumn>
+        <StatisticsColumn variants={columnVariant}>
           <IconContainer>
             <img
               src="/images/icon-fully-customizable.svg"
